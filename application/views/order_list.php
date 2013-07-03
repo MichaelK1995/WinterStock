@@ -12,7 +12,7 @@
 		<? foreach($orders as $order): ?>
 			<tr>
 				<td><? echo $order->id; ?></td>
-				<td><? echo $order->name; ?> x <? echo $order->amount; ?></td>
+				<td><? echo $order->name; ?> | <? echo $order->amount; items ?></td>
 				<td><? echo $order->requested; ?> by <? echo anchor('orders/user/'.$order->user, $order->user); ?></td>
 				<td>
 					<? if(!isset($order->state) || $order->state == 0): ?>
