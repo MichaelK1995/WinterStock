@@ -29,6 +29,7 @@
 						);
 
 						if(logged_in()) {
+							$list[] = array('management', 'Management');
 							$list[] = array('access/logout', 'Logout');
 						} else {
 							$list[] = array('access/login', 'Login');

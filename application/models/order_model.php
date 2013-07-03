@@ -3,7 +3,8 @@
 class Order_model extends CI_Model {
 
 	public function get_all_open() {
-		$this->db->select('id, item, amount, user, requested');
+		$this->db->select('orders.id, item, amount, user, requested, items.name');
+		$this->db->join('items', 'orders.item = items.id');
 		return $this->db->get_where('orders', array('state' => 0))->result();
 	}
 
